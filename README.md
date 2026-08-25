@@ -1,13 +1,16 @@
 > **Espejo de solo lectura** — publicado desde
-> [\](https://github.com/roberto-ayala/raylang/tree/main/packages/tz);
+> [`raylang/packages/tz`](https://github.com/roberto-ayala/raylang/tree/main/packages/tz);
 > el desarrollo y los PRs van al monorepo.
 >
-> **Instalación** — en tu \:
+> **Instalación** — en tu `ray.toml`:
 >
-> \\\
+> ```toml
+> [registry]
+> index = "git+https://github.com/ray-language/ray-index@main"
+> ```
 >
-> y \ — o la dependencia directa:
-> \.
+> y `ray add tz` — o la dependencia directa:
+> `tz = "git+https://github.com/ray-language/tz@v0.1.0"`.
 
 # packages/tz — hora local IANA (M85)
 
