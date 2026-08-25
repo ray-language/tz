@@ -1,3 +1,14 @@
+> **Espejo de solo lectura** — publicado desde
+> [\](https://github.com/roberto-ayala/raylang/tree/main/packages/tz);
+> el desarrollo y los PRs van al monorepo.
+>
+> **Instalación** — en tu \:
+>
+> \\\
+>
+> y \ — o la dependencia directa:
+> \.
+
 # packages/tz — hora local IANA (M85)
 
 Zonas horarias sobre los **TZif** del sistema (`/usr/share/zoneinfo`), en raylang puro
