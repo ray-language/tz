@@ -1,3 +1,5 @@
+# packages/tz — hora local IANA (M85)
+
 > **Espejo de solo lectura** — publicado desde
 > [`raylang/packages/tz`](https://github.com/roberto-ayala/raylang/tree/main/packages/tz);
 > el desarrollo y los PRs van al monorepo.
@@ -12,7 +14,6 @@
 > y `ray add tz` — o la dependencia directa:
 > `tz = "git+https://github.com/ray-language/tz@v0.1.0"`.
 
-# packages/tz — hora local IANA (M85)
 
 Zonas horarias sobre los **TZif** del sistema (`/usr/share/zoneinfo`), en raylang puro
 (RFC 8536, v1/v2/v3; cero deps). La moneda es la de `std/time`: instantes en epoch-ms UTC.
