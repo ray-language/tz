@@ -1,7 +1,7 @@
 # packages/tz — hora local IANA (M85)
 
 > **Espejo de solo lectura** — publicado desde
-> [`raylang/packages/tz`](https://github.com/roberto-ayala/raylang/tree/main/packages/tz);
+> [`raylang/packages/tz`](https://github.com/ray-language/raylang/tree/main/packages/tz);
 > el desarrollo y los PRs van al monorepo.
 >
 > **Instalación** — en tu `ray.toml`:
