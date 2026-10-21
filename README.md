@@ -1,18 +1,17 @@
 # packages/tz — hora local IANA (M85)
 
-> **Espejo de solo lectura** — publicado desde
-> [`raylang/packages/tz`](https://github.com/ray-language/raylang/tree/main/packages/tz);
-> el desarrollo y los PRs van al monorepo.
+> **Read-only mirror** — published from [`https://github.com/ray-language/raylang/tree/main/packages/tz`](https://github.com/ray-language/raylang/tree/main/packages/tz); development and pull requests go there.
 >
-> **Instalación** — en tu `ray.toml`:
+> **Install** — `ray add tz` in your project (the official index is the default), or by
+> hand in `ray.toml`:
 >
 > ```toml
-> [registry]
-> index = "git+https://github.com/ray-language/ray-index@main"
+> [dependencies]
+> tz = "^0.2.0"
 > ```
 >
-> y `ray add tz` — o la dependencia directa:
-> `tz = "git+https://github.com/ray-language/tz@v0.1.0"`.
+> Without an index, the direct git dependency:
+> `tz = "git+https://github.com/ray-language/tz@v0.2.0"`.
 
 
 Zonas horarias sobre los **TZif** del sistema (`/usr/share/zoneinfo`), en raylang puro
@@ -32,7 +31,10 @@ match (tz.to_utc(mad, civil)) {               // la inversa NO es total (DST):
 }
 ```
 
-- **Windows**: sin zoneinfo, `load` devuelve `Err` claro (UTC de `std/time` sigue).
+- **Windows**: sin zoneinfo, `load(name)` devuelve `Err` claro; pero `system()` SIEMPRE resuelve:
+  `TZ`, `/etc/localtime` y, si no hay TZif, la **zona del sistema operativo** (`from_os()`, 0.2.0):
+  offsets por `time.local_offset_ms` (la zona activa de Windows con su DST), `to_utc` con
+  `Gap`/`Ambiguous` igual, nombre `system` y abreviaturas `UTC±HH:MM`.
 - **M85b**: pasado el horizonte de transiciones explícitas rigen las **reglas perpetuas
   del footer** TZ-string (`CET-1CEST,M3.5.0,M10.5.0/3`; solo la forma `Mm.w.d[/hora]`,
   la que emite zic — un footer no soportado degrada a extrapolar el último tipo).
